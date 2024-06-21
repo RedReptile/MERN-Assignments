@@ -25,12 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ----------- Question 10 --------- */
 
   document.addEventListener('DOMContentLoaded', function() {
+    // Find the elements
     const toggleButton = document.querySelector('.navigation-toggle');
-    const navList = document.querySelector('.navigation-list');
+    const navigationList = document.querySelector('.navigation-list');
 
+    // Add click event listener to the toggle button
     toggleButton.addEventListener('click', function() {
-        navList.classList.toggle('slide-in');
-        navList.classList.toggle('slide-out');
+        navigationList.classList.toggle('active'); // Toggle the 'active' class
     });
 });
 
