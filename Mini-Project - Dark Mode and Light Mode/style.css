@@ -142,6 +142,18 @@ body.light-mode .left-content .explore-btn {
     color: rgb(31, 121, 126);
 }
 
+/* ----------- Toggle Menu ----------- */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
 /* ----------- Switch Themes --------------*/
 
 .theme-toggle {
@@ -335,12 +347,12 @@ input:checked + .slider:before {
 
 footer {
     background: rgba(255, 255, 255, 0.744);
-    color: var(--footer-text-color-dark);
+    color: #000000;
     text-align: center;
     padding: 20px 0;
     width: 100%;
     margin-top: auto;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Top shadow */
 }
 
 .socials p {
