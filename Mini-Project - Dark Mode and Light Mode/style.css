@@ -136,6 +136,36 @@ body.light-mode .left-content .explore-btn {
     margin-right: 0;
 }
 
+@media (max-width: 768px) {
+    .navlink {
+        display: none;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-content {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .carousel {
+        margin-right: 280px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: block;
+        width: 400px;
+        height: 50px;
+    }
+
+    .carousel-slides .card {
+        margin: 0 auto;
+    }
+}
+
 /* ----------- Navigation Hover Effect ----------- */
 
 .navlink li a:hover {
@@ -151,8 +181,6 @@ body.light-mode .left-content .explore-btn {
     font-size: 16px;
     cursor: pointer;
 }
-
-
 
 /* ----------- Switch Themes --------------*/
 

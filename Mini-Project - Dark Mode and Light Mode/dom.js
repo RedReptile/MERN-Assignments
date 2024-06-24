@@ -74,18 +74,27 @@ document.addEventListener('DOMContentLoaded', function () {
         const exploreBtn = document.querySelector('.explore-btn');
 
         if (theme === 'light-mode') {
-            leftContent.style.color = '#000000'; // Adjust text color in left-content for light mode
-            exploreBtn.style.backgroundColor = '#000000'; // Adjust button background color for light mode
-            exploreBtn.style.color = '#ffffff'; // Adjust text color for explore button in light mode
+            leftContent.style.color = '#000000'; 
+            exploreBtn.style.backgroundColor = '#000000'; 
+            exploreBtn.style.color = '#ffffff';
         } else {
-            leftContent.style.color = '#ffffff'; // Adjust text color in left-content for dark mode
-            exploreBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // Adjust button background color for dark mode
-            exploreBtn.style.color = '#000000'; // Adjust text color for explore button in dark mode
+            leftContent.style.color = '#ffffff'; 
+            exploreBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; 
+            exploreBtn.style.color = '#000000'; 
         }
     }
 
-    // Call adjustThemeElements when the page loads
     adjustThemeElements(currentTheme);
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var menuBtn = document.getElementById('menu-btn');
+    var menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', function() {
+        menu.classList.toggle('active'); 
+    });
+});
 
