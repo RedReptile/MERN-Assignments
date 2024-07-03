@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build and output directories
+dist/
+build/
+
+# Testing
+coverage/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp

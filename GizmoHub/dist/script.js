@@ -5,3 +5,5 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('hidden'); // Toggle the 'hidden' class on #menu
     });
 });
+
+
