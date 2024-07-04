@@ -1,4 +1,4 @@
-/* Reset some default styles */
+
 body, h1, a {
     margin: 0;
     padding: 0;
@@ -52,7 +52,6 @@ body, h1, a {
     font-size: 14px;
 }
 
-/* Add smooth transition to links */
 .navbar-links a {
     transition: color 0.3s ease;
 }
@@ -75,7 +74,6 @@ body, h1, a {
     transition: transform 0.3s ease;
 }
 
-/* Add transition for active state */
 .navbar-links.active {
     display: flex;
     background-color: #ffffff;
