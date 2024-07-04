@@ -15,24 +15,6 @@ function App() {
         >
         </a>
       </header>
-      <main>
-        <section id="home">
-          <h2>Home</h2>
-          <p>Welcome to the Home section of Ciro - Mer.</p>
-        </section>
-        <section id="about">
-          <h2>About</h2>
-          <p>Learn more about Ciro - Mer.</p>
-        </section>
-        <section id="services">
-          <h2>Services</h2>
-          <p>Discover our services in Ciro - Mer.</p>
-        </section>
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>Get in touch with us with Ciro - Mer.</p>
-        </section>
-      </main>
     </div>
   );
 }

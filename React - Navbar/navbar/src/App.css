@@ -24,16 +24,3 @@ html {
   font-size: calc(10px + 2vmin);
   color: #333; /* Darker text color */
 }
-
-section {
-  padding: 60px 20px;
-}
-
-section h2 {
-  margin-top: 0;
-}
-
-/* Ensure smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
