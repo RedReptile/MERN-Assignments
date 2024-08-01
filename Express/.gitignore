@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+bower_components/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs_analysis.dat
+*.ncb
+*.sdf
+*.cache
+*.project
+*.classpath
+*.settings/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# npm package lock file
+package-lock.json
+
+# Other files to ignore
+*.tgz
+*.gz
+*.zip
+*.tar
+*.7z

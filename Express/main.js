@@ -5,8 +5,7 @@ const app = require('./app');
 async function connectDB() {
     try {
         await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
+
         });
         console.log('Connected to Database');
     } catch (err) {
@@ -17,5 +16,5 @@ async function connectDB() {
 connectDB();
 
 app.listen(4000, () => {
-    console.log('Server running on port 3000');
+    console.log('Server running on port 4000');
 });
