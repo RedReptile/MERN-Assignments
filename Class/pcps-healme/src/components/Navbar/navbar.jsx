@@ -42,16 +42,16 @@ function Navbar() {
                 Contact
               </Link>
               <Link
-                to="/product"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                to="/addproduct"
+                className="block  text-gray-500 font-semibold px-2 py-4 hover:bg-green-500 transition duration-300"
               >
-                Product
+                Add Product
               </Link>
               <Link
                 to="/category"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
-                category
+                Category
               </Link>
               <Link
                 to="/category"
@@ -60,10 +60,10 @@ function Navbar() {
                 Register
               </Link>
               <Link
-                to="/signup"
+                to="/product"
                 className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >
-                Add Product
+                Product
               </Link>
             </div>
           </div>

@@ -1,10 +1,10 @@
 const { productImage } = require("../middleware/uploadMiddleware");
 const Product = require("../models/productModel");
+const Category = require("../models/categoryModel");
 const domain = "http://localhost:5000";
 
 // Helper function to send error responses
 const sendErrorResponse = (res, error) => {
-  // console.log(error);
   res.status(500).json({ msg: error.message });
 };
 
@@ -81,7 +81,7 @@ const updateProduct = async (req, res) => {
 
     const product = await Product.findByIdAndUpdate(req.params.id, updateData, {
       new: true,
-    });
+    }).populate('category', 'name');
 
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
@@ -100,13 +100,12 @@ const updateProduct = async (req, res) => {
 // Search and sort products (Public)
 const searchProducts = async (req, res) => {
   const { search, sort } = req.query;
-  let query = {
-  };
+  let query = {};
   if (search) {
     query.name = { $regex: search, $options: "i" };
   }
 
-  let products = await Product.find(query);
+  let products = await Product.find(query).populate('category', 'name');
 
   if (sort) {
     const sortOrder = sort === "asc" ? 1 : -1;
@@ -119,7 +118,7 @@ const searchProducts = async (req, res) => {
 // Get all products (Public) and filter by category
 const getProductsByCategory = async (req, res) => {
   try {
-    const products = await Product.find({ category: req.params.categoryId });
+    const products = await Product.find({ category: req.params.categoryId }).populate('category', 'name');
     res.status(200).json(products);
   } catch (error) {
     sendErrorResponse(res, error);
@@ -129,15 +128,13 @@ const getProductsByCategory = async (req, res) => {
 // Get a single product by ID (Public)
 const getProduct = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).populate('category', 'name');
 
     if (!product) {
       return res.status(404).json({ msg: "Product not found" });
     }
 
-    res
-      .status(200)
-      .json({ msg: "Product found successfully", product: product });
+    res.status(200).json({ msg: "Product found successfully", product: product });
   } catch (error) {
     sendErrorResponse(res, error);
   }
@@ -146,10 +143,8 @@ const getProduct = async (req, res) => {
 // get all products
 const getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find();
-    res
-      .status(200)
-      .json({ msg: "products found successfully", products: products });
+    const products = await Product.find().populate('category', 'name');
+    res.status(200).json({ msg: "products found successfully", products: products });
   } catch (error) {
     sendErrorResponse(res, error);
   }
@@ -164,16 +159,13 @@ const deleteProduct = async (req, res) => {
       return res.status(404).json({ msg: "Product not found" });
     }
 
-    res
-      .status(200)
-      .json({ msg: "Product deleted successfully", success: true });
+    res.status(200).json({ msg: "Product deleted successfully", success: true });
   } catch (error) {
     sendErrorResponse(res, error);
   }
 };
 
 // delete all products
-
 const deleteAllProducts = async (req, res) => {
   try {
     await Product.deleteMany();
@@ -188,5 +180,8 @@ module.exports = {
   updateProduct,
   searchProducts,
   getProduct,
+  getProductsByCategory,
+  getAllProducts,
   deleteProduct,
+  deleteAllProducts,
 };
